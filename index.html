@@ -108,45 +108,146 @@
 <script>
 /*
   Product data array:
-  Each item: { id, category, name_ta, name_en, pack, price, imgSeed }
-  (IMG uses picsum seed so each product gets unique placeholder)
-*/
-const products = [
-  // Sparklers
-  {id:'p1',category:'Sparklers',name_ta:'கம்பி மத்தாப்பு (12CM - Electric)',name_en:'12CM Electric Sparklers',pack:'1Box - 10Pcs',price:200,imgSeed:'sparklers1'},
-  {id:'p2',category:'Sparklers',name_ta:'12CM Crackling Sparklers',name_en:'12CM Crackling Sparklers',pack:'1Box - 10Pcs',price:220,imgSeed:'sparklers2'},
-  {id:'p3',category:'Sparklers',name_ta:'12CM Green Sparklers',name_en:'12CM Green Sparklers',pack:'1Box - 10Pcs',price:240,imgSeed:'sparklers3'},
-  // Color Matches
-  {id:'p10',category:'Color Matches',name_ta:'Super Deluxe (10in1)',name_en:'Super Deluxe (10in1)',pack:'1Box - 10Boxes',price:1000,imgSeed:'colormatch1'},
-  {id:'p11',category:'Color Matches',name_ta:'Classic (5in1)',name_en:'Classic (5in1)',pack:'1Box - 10Boxes',price:1600,imgSeed:'colormatch2'},
-  // Sound Crackers
-  {id:'p20',category:'Sound Crackers',name_ta:'2 3/4 Kuruvi',name_en:'2 3/4 Kuruvi',pack:'1Pkt',price:100,imgSeed:'sound1'},
-  {id:'p21',category:'Sound Crackers',name_ta:'3.5 Lakshmi',name_en:'3.5 Lakshmi',pack:'1Pkt',price:150,imgSeed:'sound2'},
-  {id:'p22',category:'Sound Crackers',name_ta:'4inch Lakshmi (Machine Fuse)',name_en:'4inch Lakshmi',pack:'1Pkt',price:300,imgSeed:'sound3'},
-  // Flower Pots
-  {id:'p30',category:'Flower Pots',name_ta:'Flower Pots Big',name_en:'Flower Pots Big',pack:'1Box - 10Pcs',price:700,imgSeed:'flower1'},
-  {id:'p31',category:'Flower Pots',name_ta:'Color Koti',name_en:'Color Koti',pack:'1Box - 10Pcs',price:1700,imgSeed:'flower2'},
-  // Ground Chakkar
-  {id:'p40',category:'Ground Chakkar',name_ta:'Ground Chakkar Special',name_en:'Ground Chakkar Special',pack:'1Box - 10Pcs',price:700,imgSeed:'ground1'},
-  {id:'p41',category:'Ground Chakkar',name_ta:'Ground Chakkar Asoka - ASOK',name_en:'Ground Chakkar Asoka',pack:'1Box - 10Pcs',price:1600,imgSeed:'ground2'},
-  // Fancy Chakkars
-  {id:'p50',category:'Fancy Chakkars',name_ta:'Spin Master mix - INF',name_en:'Spin Master Mix',pack:'1Box - 10Pcs',price:1300,imgSeed:'fancy1'},
-  // Bombs
-  {id:'p60',category:'Bombs',name_ta:'Classic Bomb',name_en:'Classic Bomb',pack:'1Box - 10Pcs',price:1100,imgSeed:'bomb1'},
-  {id:'p61',category:'Bombs',name_ta:'Dinosaur Bomb - SRI VIJAY',name_en:'Dinosaur Bomb',pack:'1Box - 10Pcs',price:1850,imgSeed:'bomb2'},
-  // Kids Special
-  {id:'p70',category:'Kids Special',name_ta:'Money in the Bank',name_en:'Money in the Bank',pack:'1Box - 3Pcs',price:1200,imgSeed:'kids1'},
-  {id:'p71',category:'Kids Special',name_ta:'Helicopter',name_en:'Helicopter',pack:'1Box - 5Pcs',price:1000,imgSeed:'kids2'},
-  // Night Attractions
-  {id:'p80',category:'Night Attractions',name_ta:'Tricolor',name_en:'Tricolor',pack:'1Box - 5Pcs',price:2500,imgSeed:'night1'},
-  {id:'p81',category:'Night Attractions',name_ta:'Golden Rain',name_en:'Golden Rain',pack:'1Box - 5Pcs',price:900,imgSeed:'night2'},
-  // Rockets
-  {id:'p90',category:'Rockets',name_ta:'Rocket Bomb',name_en:'Rocket Bomb',pack:'1Box - 10PCS',price:600,imgSeed:'rocket1'},
-  {id:'p91',category:'Rockets',name_ta:'Sky shot (Chotta Fancy)',name_en:'Sky Shot',pack:'1Box',price:350,imgSeed:'rocket2'},
-  // Premium / Cakes
-  {id:'p100',category:'Premium',name_ta:'30 Shots',name_en:'30 Shots Cake',pack:'1Box',price:4000,imgSeed:'cake1'},
-  {id:'p101',category:'Premium',name_ta:'120 Shots',name_en:'120 Shots',pack:'1Box',price:15000,imgSeed:'cake2'},
-  // add more as needed...
+  <!-- START: Auto-added product grid (replace or insert inside your products container) -->
+<section id="products" style="padding:20px;">
+  <h2 style="color:#ffd700; margin-bottom:12px;">Products</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:18px;">
+    
+    <!-- Product 1 -->
+    <div style="background:#101010; border-radius:10px; padding:12px; box-shadow:0 4px 8px rgba(0,0,0,0.4);">
+      <img src="https://source.unsplash.com/600x400/?sparklers" alt="2 3/4 Kuruvi" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">2 3/4 inch Kuruvi</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 pkt</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹9</strong>
+        <small style="color:#999;">MRP ₹36</small>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?fireworks" alt="3 1/2 Lakshmi" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">3 1/2 inch Lakshmi</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 pkt</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹15</strong>
+        <small style="color:#999;">MRP ₹60</small>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?rocket,firework" alt="4 inch Lakshmi" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">4 inch Lakshmi</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 pkt</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹20</strong>
+        <small style="color:#999;">MRP ₹80</small>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?sparkler,fire" alt="4 inch Gold Lakshmi" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">4 inch Gold Lakshmi</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 pkt</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹30</strong>
+        <small style="color:#999;">MRP ₹120</small>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?celebration,fireworks" alt="4 inch Deluxe Lakshmi" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">4 inch Deluxe Lakshmi</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 pkt</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹33</strong>
+        <small style="color:#999;">MRP ₹132</small>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?fountain,fireworks" alt="Flower Pots Big" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">Flower Pots - Big</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 box</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹70</strong>
+        <small style="color:#999;">MRP ₹280</small>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?fountain,colors" alt="Flower Pots Special" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">Flower Pots Special</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 box</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹90</strong>
+        <small style="color:#999;">MRP ₹360</small>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?spinner,fireworks" alt="Flower Pots Asoka" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">Flower Pots Asoka</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 box</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹130</strong>
+        <small style="color:#999;">MRP ₹520</small>
+      </div>
+    </div>
+
+    <!-- Product 9 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?spinning,fireworks" alt="Flower Pots Deluxe (5pcs)" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">Flower Pots Deluxe (5pcs)</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 box</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹160</strong>
+        <small style="color:#999;">MRP ₹640</small>
+      </div>
+    </div>
+
+    <!-- Product 10 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?colorful,fireworks" alt="Flower Pots Color Koti" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">Flower Pots Color Koti</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 box</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹180</strong>
+        <small style="color:#999;">MRP ₹720</small>
+      </div>
+    </div>
+
+    <!-- Product 11 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?ground,firework" alt="Ground Chakkar Big" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">Ground Chakkar - Big</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 box</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹34</strong>
+        <small style="color:#999;">MRP ₹136</small>
+      </div>
+    </div>
+
+    <!-- Product 12 -->
+    <div style="background:#101010; border-radius:10px; padding:12px;">
+      <img src="https://source.unsplash.com/600x400/?wheel,fireworks" alt="Ground Chakkar Asoka" style="width:100%; height:140px; object-fit:cover; border-radius:8px;">
+      <h3 style="color:#ffd700; margin:8px 0 4px;">Ground Chakkar Asoka</h3>
+      <p style="color:#ccc; margin:0 0 6px; font-size:14px;">1 box</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:#ff4d4f;">₹59</strong>
+        <small style="color:#999;">MRP ₹236</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- END: Auto-added product grid -->
 ];
 
 // helper: format rupee
