@@ -1,46 +1,94 @@
 <!DOCTYPE html>
 <html lang="ta">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>KISHANTH CRACKERS – GALLERY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KISHANTH CRACKERS</title>
 
 <style>
     body {
+        margin: 0;
         font-family: Arial, sans-serif;
-        background:#000;
-        margin:0;
-        padding:0;
-        color:#fff;
+        background: #fff9e6;
+        color: #000;
     }
+
+    /* HEADER */
     .header {
-        background:#ff0000;
-        background:linear-gradient(45deg,#ff0000,#ffd100);
-        padding:20px;
-        text-align:center;
-        font-size:30px;
-        font-weight:bold;
-        letter-spacing:2px;
+        background: linear-gradient(90deg, #ff0000, #ffd000);
+        padding: 25px 10px;
+        text-align: center;
+        font-size: 32px;
+        color: #000;
+        font-weight: 900;
+        letter-spacing: 2px;
     }
+
     .sub {
-        text-align:center;
-        font-size:16px;
-        margin-top:5px;
-        color:#ffd100;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 5px;
+        font-weight: bold;
+        color: #444;
     }
-    .grid {
-        display:grid;
-        grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
-        gap:10px;
-        padding:15px;
+
+    /* SECTION TITLE */
+    .section-title {
+        background: #ffe066;
+        padding: 8px;
+        font-weight: 900;
+        font-size: 22px;
+        margin-top: 25px;
+        text-align: center;
+        border-left: 6px solid #ff0000;
     }
-    .grid img {
-        width:100%;
-        height:150px;
-        object-fit:cover;
-        border-radius:8px;
-        border:2px solid #333;
-        background:#111;
+
+    /* PRODUCT BOX */
+    .product {
+        width: 90%;
+        margin: 12px auto;
+        background: #fff;
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #aaa;
+        border-left: 6px solid #ffcd00;
+    }
+
+    .product h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .price {
+        margin-top: 6px;
+        font-size: 16px;
+        color: green;
+        font-weight: bold;
+    }
+
+    /* WHATSAPP BUTTON */
+    .whatsapp {
+        display: block;
+        width: 90%;
+        margin: 30px auto;
+        background: #25D366;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* FOOTER */
+    .footer {
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        margin-top: 30px;
+        padding-bottom: 40px;
     }
 </style>
 </head>
@@ -48,37 +96,73 @@
 <body>
 
 <div class="header">KISHANTH CRACKERS</div>
-<div class="sub">🔥 Uploaded Photos Will Show Here Automatically 🔥</div>
+<div class="sub">Vembakottai • Wholesale & Retail • Since 2025</div>
 
-<div class="grid" id="gallery"></div>
+<!-- FLOWER POTS -->
+<div class="section-title">🌼 FLOWER POTS</div>
 
-<script>
-async function loadImages() {
-    const folder = "images/";
-    const response = await fetch(folder);
-    const text = await response.text();
+<div class="product"><h3>Flower Pots Big</h3><div class="price">Offer: ₹70</div></div>
+<div class="product"><h3>Flower Pots Special</h3><div class="price">Offer: ₹90</div></div>
+<div class="product"><h3>Flower Pots Asoka</h3><div class="price">Offer: ₹130</div></div>
+<div class="product"><h3>Flower Pots Deluxe</h3><div class="price">Offer: ₹160</div></div>
+<div class="product"><h3>Color Koti</h3><div class="price">Offer: ₹180</div></div>
+<div class="product"><h3>Mega Tri Color</h3><div class="price">Offer: ₹490</div></div>
 
-    const gallery = document.getElementById("gallery");
-    const regex = /href="(.*?)"/g;
+<!-- SOUND CRACKERS -->
+<div class="section-title">💥 SOUND CRACKERS</div>
 
-    let m;
-    let images = [];
+<div class="product"><h3>2¾ Kuruvi</h3><div class="price">Offer: ₹9</div></div>
+<div class="product"><h3>3½ Lakshmi</h3><div class="price">Offer: ₹15</div></div>
+<div class="product"><h3>4" Lakshmi</h3><div class="price">Offer: ₹20</div></div>
+<div class="product"><h3>4" Gold Lakshmi</h3><div class="price">Offer: ₹30</div></div>
+<div class="product"><h3>4" Deluxe Lakshmi</h3><div class="price">Offer: ₹33</div></div>
+<div class="product"><h3>2 Sound Crackers</h3><div class="price">Offer: ₹24</div></div>
+<div class="product"><h3>3 Sound Crackers</h3><div class="price">Offer: ₹31</div></div>
 
-    while ((m = regex.exec(text)) !== null) {
-        if (m[1].match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
-            images.push(m[1]);
-        }
-    }
+<!-- BIGILI -->
+<div class="section-title">🔴 BIGILI SERIES</div>
 
-    images.forEach(img => {
-        const el = document.createElement("img");
-        el.src = folder + img;
-        gallery.appendChild(el);
-    });
-}
+<div class="product"><h3>Bigili 100pcs</h3><div class="price">Offer: ₹48</div></div>
+<div class="product"><h3>Bigili 50pcs</h3><div class="price">Offer: ₹20</div></div>
+<div class="product"><h3>Bigili Red 100pcs</h3><div class="price">Offer: ₹45</div></div>
+<div class="product"><h3>Bigili Red 50pcs</h3><div class="price">Offer: ₹18</div></div>
 
-loadImages();
-</script>
+<!-- ATOM BOMB -->
+<div class="section-title">💣 ATOM BOMB</div>
+
+<div class="product"><h3>Bullet Bomb</h3><div class="price">Offer: ₹30</div></div>
+<div class="product"><h3>Mega Bullet</h3><div class="price">Offer: ₹70</div></div>
+<div class="product"><h3>Hydro Bomb</h3><div class="price">Offer: ₹80</div></div>
+<div class="product"><h3>Classic Bomb</h3><div class="price">Offer: ₹110</div></div>
+<div class="product"><h3>Jallikattu Ply Bomb</h3><div class="price">Offer: ₹190</div></div>
+
+<!-- FANCY -->
+<div class="section-title">✨ FANCY ITEMS</div>
+
+<div class="product"><h3>3" Pipe</h3><div class="price">Check Price on WhatsApp</div></div>
+<div class="product"><h3>4" Pipe</h3><div class="price">Check Price on WhatsApp</div></div>
+<div class="product"><h3>3 Pcs Fancy</h3><div class="price">Check Price on WhatsApp</div></div>
+<div class="product"><h3>30 Shot</h3><div class="price">Check Price on WhatsApp</div></div>
+<div class="product"><h3>60 Shot</h3><div class="price">Check Price on WhatsApp</div></div>
+<div class="product"><h3>100 Shot</h3><div class="price">Check Price on WhatsApp</div></div>
+
+<!-- SPARKLERS -->
+<div class="section-title">🌟 SPARKLERS</div>
+<div class="product"><h3>7cm Colour</h3><div class="price">Offer: ₹—</div></div>
+<div class="product"><h3>10cm</h3><div class="price">Offer: ₹—</div></div>
+<div class="product"><h3>15cm</h3><div class="price">Offer: ₹—</div></div>
+<div class="product"><h3>30cm</h3><div class="price">Offer: ₹—</div></div>
+<div class="product"><h3>50cm</h3><div class="price">Offer: ₹—</div></div>
+
+<!-- BUTTON -->
+<a class="whatsapp" href="https://wa.me/917448489142">📲 Order on WhatsApp</a>
+
+<!-- FOOTER -->
+<div class="footer">
+Owner: Prashanth | 3/61 South Street, Vembakottai<br>
+UPI: 7448489142@ybl<br>
+© 2025 Kishanth Crackers
+</div>
 
 </body>
 </html>
